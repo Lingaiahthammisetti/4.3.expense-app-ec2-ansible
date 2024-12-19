@@ -10,7 +10,7 @@ cd /app
 unzip /tmp/backend.zip
 npm install
 
-cp /root4.0.expense-tf-ec2-instances/backend.service /etc/systemd/system/backend.service
+cp /root/4.0.expense-tf-ec2-instances/backend.service /etc/systemd/system/backend.service
 
 systemctl daemon-reload
 systemctl start backend
