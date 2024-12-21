@@ -17,16 +17,17 @@ Description = Backend Service
 
 [Service]
 User=expense
-Environment=DB_HOST="mysql.lingaiah.online"
+Environment=DB_HOST=mysql.lingaiah.online
 ExecStart=/bin/node /app/index.js
 SyslogIdentifier=backend
 
 [Install]
-WantedBy=multi-user.target" >> /etc/systemd/system/backend.service
+WantedBy=multi-user.target" > /etc/systemd/system/backend.service
 
 systemctl daemon-reload
 systemctl start backend
 systemctl enable backend
+
 dnf install mysql -y
-mysql -h mysql.lingaiah.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h mysql.lingaiah.online -u root -pExpenseApp@1 < /app/schema/backend.sql
 systemctl restart backend
