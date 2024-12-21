@@ -5,7 +5,6 @@ terraform {
       version = "5.66.0"
     }
   }
-
   backend "s3" {
     bucket = "roboshop-remote-state-dev-ec2"
     key    = "roboshop-project"
@@ -13,7 +12,6 @@ terraform {
     dynamodb_table = "roboshop-locking-dev-ec2"
   }
 }
-
 provider "aws" {
   # Configuration options
   region = "us-east-1"
