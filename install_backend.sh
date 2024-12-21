@@ -28,5 +28,5 @@ systemctl daemon-reload
 systemctl start backend
 systemctl enable backend
 dnf install mysql -y
-mysql -h mysql.lingaiah.online -u root -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h mysql.lingaiah.online -uroot -pExpenseApp@1 < /app/schema/backend.sql
 systemctl restart backend
