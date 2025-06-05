@@ -1,9 +1,9 @@
 variable "allow_all" {
    type = string
-   default = "sg-06b1b57b365846051"
+   default = "sg-09c7c70bd56f0d58b"
 }
 variable "zone_id" {
-    default = "Z0156758BBW0KPG6ELJM"
+    default = "Z07608533HHBQHW47XU3F"
 }
 variable "domain_name" {
   default = "lingaiah.online"

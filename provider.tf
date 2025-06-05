@@ -2,16 +2,18 @@ terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = "5.66.0"
+      version = "5.48.0"
     }
   }
-  backend "s3" {
-    bucket = "expense-tf-ec2-remote-state"
-    key    = "expense-tf-ec2-key"
-    region = "us-east-1"
-    dynamodb_table = "expense-tf-ec2-locking"
+
+backend "s3" {
+  bucket = "ansible-tf-remote-state"
+  key = "ansible-app-ec2"
+  region = "us-east-1"
+  dynamodb_table="ansible-tf-locking"
   }
 }
+#provide authentication here
 provider "aws" {
   # Configuration options
   region = "us-east-1"
