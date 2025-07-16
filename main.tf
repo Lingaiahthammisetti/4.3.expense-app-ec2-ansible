@@ -1,10 +1,17 @@
-
 resource "aws_instance" "expense" {
     for_each = var.instances
     ami           = data.aws_ami.rhel_info.id
     instance_type = each.value
     vpc_security_group_ids = [var.allow_all]
     user_data = file("${path.module}/install_${each.key}.sh")
+    root_block_device {
+        encrypted             = false
+        volume_type           = "gp3"
+        volume_size           = 50
+        iops                  = 3000
+        throughput            = 125
+        delete_on_termination = true
+    }
 
     tags = {
         Name = each.key
